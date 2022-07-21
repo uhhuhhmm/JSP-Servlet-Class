@@ -1,0 +1,26 @@
+package com.j.dao;
+
+import javax.naming.Context;
+import javax.sql.DataSource;
+
+public class EmployeesDAO {
+	private EmployeesDAO() {
+		
+	}
+	
+	private static EmployeesDAO instance = new EmployeesDAO();
+	
+	public static EmployeesDAO getInstance() {
+		return instance;
+	}
+	
+	public Connection getConnection() throws Exception{
+		Connection conn = null;
+		Context init = new InitialContext();
+		DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
+		conn = ds.getConnection();
+		return conn;
+	}
+	
+	
+}

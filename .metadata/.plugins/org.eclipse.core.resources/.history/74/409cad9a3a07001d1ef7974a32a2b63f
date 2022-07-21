@@ -1,0 +1,13 @@
+function loginCheck(){
+	if(document.frm.userid.value.length == 0){
+		alert("Please enter your ID");
+		frm.userid.focus();
+		return false;
+	}
+	if (document.frm.pwd.value == ""){
+		alert("You MUST enter your PWD");
+		frm.pwd.focus();
+		return false;
+	}
+	return true;
+}

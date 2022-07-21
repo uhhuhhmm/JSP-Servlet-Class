@@ -1,0 +1,12 @@
+package com.j.javabeans;
+
+@Setter
+@Getter
+public class BoardBean304 {
+	private String name;
+	private String pass;
+	private String email;
+	private String title;
+	private String content;
+	
+}

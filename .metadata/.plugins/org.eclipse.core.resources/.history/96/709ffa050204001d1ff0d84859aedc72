@@ -1,0 +1,13 @@
+package com.j.javabeans;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@AllArgsConstructor
+public class MemberBean334 {
+	private String name;
+	private String userid;
+}

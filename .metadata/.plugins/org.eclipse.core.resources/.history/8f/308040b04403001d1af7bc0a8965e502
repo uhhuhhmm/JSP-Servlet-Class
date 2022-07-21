@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@page import="java.net.URLDecoder"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%
+		Cookie ck[] = null;
+		request.getCookies();
+		String str = null;
+		if(ck != null){
+			for(Cookie c : ck){
+				str = URLDecoder.decode(c.getValue(), "UTF-8");
+			}
+			out.print(str);
+	%>
+	<%}else{%>
+	
+<%-- 	<% --%>
+// 	if(session.getAttribute("loginUser")==null){
+// 		response.sendRedirect("loginForm259.jsp");
+// 	}else{
+<%-- 	%> --%>
+		<%=session.getAttribute("loginUser")%>님 안녕하세요!<br>
+		저희 홈페이지에 방문해 주셔서 감사<br>
+		즐거운 시간 되세요....<br>
+		<form method="post" action="logOut262.jsp">	
+			<input type="submit" value="로그아웃">
+		</form>
+	<%
+	}
+	%>
+</body>
+</html>
