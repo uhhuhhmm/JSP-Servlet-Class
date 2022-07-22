@@ -17,12 +17,15 @@
 		Iterator<String> keys = map.keySet().iterator();
 		
 		while(keys.hasNext()){
-			String key = keys.next();
-			String value = map.get(key);
+			String systemfilename = keys.next();
+			String originfilename = map.get(systemfilename);
 	%>
-	업로드된 파일명 : <%=key %><br>
-	원본 파일명 : <%=value %>
-	<hr>
+	<p>
+		<a href="fileDown.jsp?file_name=<%=systemfilename%>"><%=originfilename %></a>
+	</p>	
+<%-- 	업로드된 파일명 : <%=key %><br> --%>
+<%-- 	원본 파일명 : <%=value %> --%>
+<!-- 	<hr> -->
 	<%} %>
 </body>
 </html>

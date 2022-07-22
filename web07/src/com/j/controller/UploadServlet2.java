@@ -60,7 +60,7 @@ public class UploadServlet2 extends HttpServlet {
 //					out.print("<hr>");
 					
 					map.put(file_name, ori_file_name);
-				}
+				}	
 				request.setAttribute("map", map);
 			}catch (Exception e) {
 				System.out.println("예외 발생 : " + e);
