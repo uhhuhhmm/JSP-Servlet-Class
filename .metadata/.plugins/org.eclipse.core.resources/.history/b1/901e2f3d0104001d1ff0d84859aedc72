@@ -1,6 +1,0 @@
-package com.j.javabeans;
-
-public class MemberBean334 {
-	private String name;
-	private String userid;
-}

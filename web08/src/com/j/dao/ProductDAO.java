@@ -122,7 +122,7 @@ public class ProductDAO {
 			pstmt.setString(3, pVo.getPictureUrl());
 			pstmt.setString(4, pVo.getDescription());
 			pstmt.setInt(5, pVo.getCode());
-			pstmt.executeUpdate();
+			pstmt.executeUpdate();	// 실행
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -130,7 +130,23 @@ public class ProductDAO {
 		}
 	}
 	
-	
+	// c r u Delete
+	public void deleteProduct(String code) {
+		String sql = "delete products where code=?";
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		
+		try {
+			conn = DBManager.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, code);
+			pstmt.executeQuery();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(conn, pstmt);
+		}
+	}
 	
 	
 	
