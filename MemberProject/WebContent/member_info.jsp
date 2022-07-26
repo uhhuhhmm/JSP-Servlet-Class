@@ -3,7 +3,11 @@
 <%@ page import="java.sql.*" %>
 <%@ page import="javax.sql.*" %>
 <%@ page import="javax.naming.*" %>
-
+<%!
+	Connection conn = null;
+	PreparedStatement pstmt = null;
+	ResultSet rs = null;
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,12 +30,9 @@
 	try{
 		request.setCharacterEncoding("UTF-8");
 
-		String id = request.getParameter("id");
-		String sql = "select * from members where id=?";
+		String sql = "select * from members where id=?, password=?, name=?, age=?, gender=?, email=?";
 		
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		String id = request.getParameter("id");
 		
 		Context init = new InitialContext();
 		DataSource ds = (DataSource) init.lookup("java:comp/env/jdbc/OracleDB");
@@ -39,8 +40,8 @@
 		
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
-		rs = pstmt.executeQuery(sql);
-		while(rs.next()){	
+		rs = pstmt.executeQuery();
+		if(rs.next()){	
 			pstmt.setString(1, rs.getString("id"));
 			pstmt.setString(2, rs.getString("password"));
 			pstmt.setString(3, rs.getString("name"));
@@ -52,9 +53,12 @@
 		e.printStackTrace();
 	}finally{
 		try{
-			rs.close();
-			pstmt.close();
-			conn.close();
+			if (rs != null) 
+				rs.close();
+			if (pstmt != null) 
+				pstmt.close();
+			if (conn != null) 
+				conn.close();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
