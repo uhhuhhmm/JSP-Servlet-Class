@@ -166,6 +166,8 @@
    <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="100" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:orcl" username="scott"/>
 </Context><Context docBase="C:\Work\jspworkspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\web09" path="/web09" reloadable="true" source="org.eclipse.jst.jee.server:web09">
    <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="100" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:orcl" username="scott"/>
+</Context><Context docBase="C:\Work\jspworkspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Emp661" path="/Emp661" reloadable="true" source="org.eclipse.jst.jee.server:Emp661">
+   <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" factory="org.apache.tomcat.dbcp.dbcp2.BasicDataSourceFactory" maxActive="500" maxIdle="100" name="jdbc/OracleDB" password="tiger" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:orcl" username="scott"/>
 </Context></Host>
     </Engine>
   </Service>

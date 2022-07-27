@@ -24,7 +24,7 @@
 		</table>
 		<br>
 		<input type="submit" value="확인" onclick="return passCheck()">
-		<br><br>${message}
+		<br><br>	${message}
 	</form>
 </div>
 </body>
